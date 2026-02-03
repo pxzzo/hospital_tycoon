@@ -1,30 +1,32 @@
-# F1 Discord Bot
+# F1 Discord Bot (discord.js)
 
-Ein schlanker Discord-Bot, der aktuelle Formel‑1‑Infos via [Ergast API](https://ergast.com/mrd/) liefert.
+Ein Discord Bot für eine F1‑Team‑Season. Aktueller Stand:
 
-## Features
-- `/next_race` – nächstes Rennen inkl. Datum/Ort
-- `/standings drivers` – Fahrerwertung
-- `/standings constructors` – Konstrukteurswertung
-- `/driver <code>` – Infos zu einem Fahrer (z. B. `ver`, `ham`, `nor`)
+- `/f1admin start-season` postet Team‑Buttons in `#f1`
+- Klick auf ein Team deaktiviert den Button automatisch
+- Persistente Season-ID + Speicherung der Teams
+- Lock sobald alle Teams belegt sind
+- Team‑Overview Embed
+- Qualifying + Race Simulation
+- Weekend-System inkl. Punkte & Money Economy
 
 ## Setup
 
-1. Python 3.11+ installieren
+1. Node.js 18+ installieren
 2. Abhängigkeiten installieren:
    ```bash
-   pip install -r requirements.txt
+   npm install
    ```
-3. Umgebungsvariablen setzen (siehe `.env.example`):
+3. `.env` anlegen (siehe `.env.example`):
    ```bash
-   export DISCORD_TOKEN="..."
-   export DISCORD_GUILD_ID="1234567890"  # optional, beschleunigt Slash-Command Sync
+   DISCORD_TOKEN="..."
+   DISCORD_CLIENT_ID="..."
+   F1_CHANNEL_NAME="f1"
    ```
 4. Bot starten:
    ```bash
-   python bot.py
+   npm start
    ```
 
-## Hinweise
-- Die Ergast API ist kostenlos und rate-limited. Der Bot cached Antworten kurzzeitig.
-- `DISCORD_GUILD_ID` ist optional. Ohne diese Variable werden Commands global synchronisiert (kann dauern).
+## Hinweis
+- Commands werden beim Start registriert (global). Das kann ein paar Minuten dauern.
