@@ -1,0 +1,15 @@
+{
+  "name": "f1-discord-bot",
+  "version": "1.0.0",
+  "description": "F1 Discord bot powered by discord.js",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "echo \"no lint configured\""
+  },
+  "dependencies": {
+    "discord.js": "14.15.3",
+    "dotenv": "16.4.5"
+  }
+}
